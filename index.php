@@ -11,14 +11,28 @@
 <body>
     <header class="hero">
         <div class="container hero-content">
-            <span class="hero-badge">Офлайн-курс · 15 августа 2026</span>
-            <h1>Первая помощь: практический курс для каждого</h1>
+            <span class="hero-badge">Офлайн-курс · Москва · 15 августа 2026</span>
+            <h1>Научитесь оказывать первую помощь за один практический день</h1>
             <p class="hero-text">
-                Научитесь действовать уверенно в экстренной ситуации: остановить кровотечение,
-                провести сердечно-легочную реанимацию, помочь при травмах и ожогах до приезда
-                медиков. Курс построен на практике с инструкторами, которые каждый день работают
-                с реальными вызовами.
+                Отработаете СЛР, остановку кровотечений и помощь при травмах на манекенах
+                под контролем инструкторов экстренной медицины. Уйдёте с понятным алгоритмом
+                действий, сертификатом и уверенностью, что сможете помочь до приезда врачей.
             </p>
+            <div class="hero-offer" aria-label="Стоимость и условия участия">
+                <strong>от 4 900 ₽</strong>
+                <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
+            </div>
+            <div class="hero-actions">
+                <button
+                    type="button"
+                    class="btn btn-primary btn-register"
+                    data-cta-source="hero"
+                    data-tariff-name="Участие в курсе"
+                    data-tariff-price="от 4 900 ₽"
+                >Забронировать место</button>
+                <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
+            </div>
+            <p class="hero-reassurance">Заявка занимает около минуты. Оплата сейчас не требуется.</p>
             <div class="meta-grid">
                 <div class="meta-card">
                     <strong>Дата</strong>
@@ -34,8 +48,7 @@
                 </div>
             </div>
             <div class="hero-note">
-                На курсе вы отработаете навыки на манекенах и отработаете сценарии, которые
-                помогают сохранить спокойствие и принимать правильные решения под давлением времени.
+                Каждый участник несколько раз отработает ключевые навыки на манекенах и в парах.
                 После занятия вы получите сертификат и памятку по алгоритмам первой помощи.
             </div>
         </div>
@@ -70,7 +83,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="program">
             <div class="container">
                 <h2 class="section-title">Программа курса</h2>
                 <p class="section-lead program-intro">
@@ -302,7 +315,13 @@
                             <li>Сертификат и памятка</li>
                             <li>Кофе-брейки</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
+                        <button
+                            type="button"
+                            class="btn btn-register"
+                            data-cta-source="pricing"
+                            data-tariff-name="Базовый"
+                            data-tariff-price="4 900 ₽"
+                        >Забронировать место</button>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
@@ -312,7 +331,13 @@
                             <li>Набор перевязочных материалов</li>
                             <li>Дополнительный практический блок</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
+                        <button
+                            type="button"
+                            class="btn btn-register"
+                            data-cta-source="pricing"
+                            data-tariff-name="Расширенный"
+                            data-tariff-price="7 900 ₽"
+                        >Забронировать место</button>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
@@ -322,7 +347,13 @@
                             <li>Консультация для HR или руководителя</li>
                             <li>Отчёт о прохождении для работодателя</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
+                        <button
+                            type="button"
+                            class="btn btn-register"
+                            data-cta-source="pricing"
+                            data-tariff-name="Корпоративный"
+                            data-tariff-price="12 900 ₽"
+                        >Обсудить участие</button>
                     </article>
                 </div>
             </div>
@@ -331,28 +362,44 @@
         <section class="section registration-section" id="registration">
             <div class="container">
                 <div class="registration-panel">
-                    <h2 class="section-title">Записаться на курс</h2>
-                    <p class="section-lead">
-                        Оставьте заявку, и мы свяжемся с вами, чтобы подтвердить место и ответить на вопросы.
-                    </p>
+                    <div class="registration-copy">
+                        <span class="registration-eyebrow">Бронирование без оплаты</span>
+                        <h2 class="section-title">Забронировать место</h2>
+                        <p class="section-lead">
+                            Оставьте контакты — подтвердим наличие места, уточним выбранный формат
+                            и ответим на вопросы. Заполнение займёт около минуты.
+                        </p>
+                        <div class="selected-tariff" id="selected-tariff" aria-live="polite">
+                            <span>Ваш выбор</span>
+                            <strong id="selected-tariff-name">Участие в курсе</strong>
+                            <b id="selected-tariff-price">от 4 900 ₽</b>
+                        </div>
+                    </div>
                     <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
-                        <label>
-                            Имя
-                            <input type="text" name="name" required autocomplete="name">
+                        <input type="hidden" name="bot_session_id" value="">
+                        <input type="hidden" name="tariff" value="Участие в курсе">
+                        <label class="form-field">
+                            <span>Имя</span>
+                            <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться">
                         </label>
-                        <label>
-                            Телефон
-                            <input type="tel" name="phone" required autocomplete="tel">
+                        <label class="form-field">
+                            <span>Телефон</span>
+                            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <label>
-                            E-mail
-                            <input type="email" name="email" required autocomplete="email">
+                        <label class="form-field">
+                            <span>E-mail</span>
+                            <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Для сертификата и материалов">
                         </label>
-                        <label>
-                            Цель прохождения курса
-                            <textarea name="purpose" required></textarea>
+                        <label class="form-field form-field-wide">
+                            <span>Цель прохождения курса</span>
+                            <textarea name="purpose" required placeholder="Например: хочу уверенно помочь близким"></textarea>
+                            <small>Достаточно одной короткой фразы.</small>
                         </label>
-                        <button type="submit" class="btn">Отправить заявку</button>
+                        <button type="submit" class="btn btn-primary form-submit">Забронировать место</button>
+                        <p class="form-privacy">
+                            Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
+                            Мы не передаём контакты третьим лицам.
+                        </p>
                     </form>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
