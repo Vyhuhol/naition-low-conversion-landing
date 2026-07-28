@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerButtons = document.querySelectorAll('.btn-register');
     const selectedTariffName = document.getElementById('selected-tariff-name');
     const selectedTariffPrice = document.getElementById('selected-tariff-price');
+    const purposeInput = form?.querySelector('textarea[name="purpose"]');
+    const purposeOptions = document.querySelectorAll('.purpose-option');
+    const mobileBookingBar = document.querySelector('.mobile-booking-bar');
+    const hero = document.querySelector('.hero');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const trackGoal = (goal, params = {}) => {
@@ -56,7 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const source = button.dataset.ctaSource || 'unknown';
             const tariffName = showSelectedTariff(button);
 
-            trackGoal(source === 'hero' ? 'hero_cta_click' : 'pricing_cta_click', {
+            const ctaGoal = source === 'hero'
+                ? 'hero_cta_click'
+                : source === 'mobile_sticky'
+                    ? 'mobile_cta_click'
+                    : 'pricing_cta_click';
+
+            trackGoal(ctaGoal, {
                 source,
                 tariff: tariffName,
             });
@@ -83,11 +93,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const updateMobileBookingBar = () => {
+        if (!mobileBookingBar || !hero || !registrationSection) {
+            return;
+        }
+
+        const isMobile = window.matchMedia('(max-width: 720px)').matches;
+        const heroPassed = hero.getBoundingClientRect().bottom < 0;
+        const registrationReached = registrationSection.getBoundingClientRect().top < window.innerHeight * 0.7;
+
+        mobileBookingBar.classList.toggle(
+            'is-visible',
+            isMobile && heroPassed && !registrationReached
+        );
+    };
+
+    updateMobileBookingBar();
+    window.addEventListener('scroll', updateMobileBookingBar, { passive: true });
+    window.addEventListener('resize', updateMobileBookingBar);
+
     if (!form) {
         return;
     }
 
     let formStarted = false;
+
+    purposeOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+            if (!(purposeInput instanceof HTMLTextAreaElement)) {
+                return;
+            }
+
+            purposeOptions.forEach((item) => {
+                item.classList.remove('is-selected');
+                item.setAttribute('aria-pressed', 'false');
+            });
+
+            option.classList.add('is-selected');
+            option.setAttribute('aria-pressed', 'true');
+            purposeInput.value = option.dataset.purposeValue || '';
+            purposeInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+            trackGoal('purpose_option_select', {
+                option: option.dataset.purposeId || 'unknown',
+            });
+        });
+    });
+
+    purposeInput?.addEventListener('input', (event) => {
+        if (event.isTrusted) {
+            purposeOptions.forEach((option) => {
+                option.classList.remove('is-selected');
+                option.setAttribute('aria-pressed', 'false');
+            });
+        }
+    });
+
     form.addEventListener('input', () => {
         if (formStarted) {
             return;

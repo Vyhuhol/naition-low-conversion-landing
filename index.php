@@ -390,11 +390,18 @@
                             <span>E-mail</span>
                             <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Для сертификата и материалов">
                         </label>
-                        <label class="form-field form-field-wide">
-                            <span>Цель прохождения курса</span>
-                            <textarea name="purpose" required placeholder="Например: хочу уверенно помочь близким"></textarea>
-                            <small>Достаточно одной короткой фразы.</small>
-                        </label>
+                        <div class="form-field form-field-wide">
+                            <span id="purpose-label">Зачем вам курс?</span>
+                            <div class="purpose-options" aria-labelledby="purpose-label">
+                                <button type="button" class="purpose-option" data-purpose-id="family" data-purpose-value="Хочу уверенно помочь близким" aria-pressed="false">Для себя и близких</button>
+                                <button type="button" class="purpose-option" data-purpose-id="work" data-purpose-value="Курс нужен для работы" aria-pressed="false">Для работы</button>
+                                <button type="button" class="purpose-option" data-purpose-id="team" data-purpose-value="Хочу обучить команду" aria-pressed="false">Для команды</button>
+                            </div>
+                            <label class="purpose-custom">
+                                <span>Или напишите свой вариант</span>
+                                <textarea name="purpose" required placeholder="Достаточно одной короткой фразы"></textarea>
+                            </label>
+                        </div>
                         <button type="submit" class="btn btn-primary form-submit">Забронировать место</button>
                         <p class="form-privacy">
                             Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
@@ -405,6 +412,14 @@
                 </div>
             </div>
         </section>
+
+        <button
+            type="button"
+            class="btn btn-primary btn-register mobile-booking-bar"
+            data-cta-source="mobile_sticky"
+            data-tariff-name="Участие в курсе"
+            data-tariff-price="от 4 900 ₽"
+        >Забронировать место · от 4 900 ₽</button>
     </main>
 
     <footer class="site-footer">
