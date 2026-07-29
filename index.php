@@ -29,11 +29,11 @@
                     data-cta-source="hero"
                     data-tariff-name="Участие в курсе"
                     data-tariff-price="от 4 900 ₽"
-                >Узнать о местах в WhatsApp</button>
+                >Проверить наличие мест</button>
                 <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
             <p class="hero-reassurance">
-                Напишем в WhatsApp — без звонка, оплаты и обязательства покупать курс.
+                Проверка занимает меньше минуты: без оплаты, банковской карты и обязательства покупать курс.
             </p>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -323,7 +323,7 @@
                             data-cta-source="pricing"
                             data-tariff-name="Базовый"
                             data-tariff-price="4 900 ₽"
-                        >Узнать о местах в WhatsApp</button>
+                        >Проверить наличие мест</button>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
@@ -339,7 +339,7 @@
                             data-cta-source="pricing"
                             data-tariff-name="Расширенный"
                             data-tariff-price="7 900 ₽"
-                        >Узнать о местах в WhatsApp</button>
+                        >Проверить наличие мест</button>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
@@ -355,7 +355,7 @@
                             data-cta-source="pricing"
                             data-tariff-name="Корпоративный"
                             data-tariff-price="12 900 ₽"
-                        >Уточнить в WhatsApp</button>
+                        >Уточнить условия</button>
                     </article>
                 </div>
             </div>
@@ -365,11 +365,11 @@
             <div class="container">
                 <div class="registration-panel">
                     <div class="registration-copy">
-                        <span class="registration-eyebrow">Ответ без звонка</span>
-                        <h2 class="section-title">Узнать о местах в WhatsApp</h2>
+                        <span class="registration-eyebrow">Проверка без оплаты</span>
+                        <h2 class="section-title">Узнать, есть ли места</h2>
                         <p class="section-lead">
-                            Оставьте номер, привязанный к WhatsApp. Пришлём информацию о местах
-                            и формате сообщением — звонить не будем.
+                            Оставьте телефон — сообщим о наличии мест, уточним формат и ответим
+                            на вопросы. Имя и решение об участии можно сообщить после разговора.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
                             <span>Что проверим</span>
@@ -378,21 +378,21 @@
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
-                        <li><strong>Ответ в WhatsApp</strong><span>Сообщением в удобное время</span></li>
+                        <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
                         <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
-                        <li><strong>Без звонка</strong><span>Номер нужен только для сообщения</span></li>
+                        <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
                     </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
                         <input type="hidden" name="tariff" value="Участие в курсе">
                         <input type="hidden" name="name" value="Не указано">
                         <label class="form-field">
-                            <span>Номер WhatsApp</span>
+                            <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <button type="submit" class="btn btn-primary form-submit">Получить ответ в WhatsApp</button>
+                        <button type="submit" class="btn btn-primary form-submit">Проверить наличие мест</button>
                         <p class="form-privacy">
-                            Нажимая кнопку, вы соглашаетесь на обработку данных для ответа в WhatsApp.
+                            Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
                             Мы не передаём контакты третьим лицам.
                         </p>
                     </form>
@@ -407,7 +407,7 @@
             data-cta-source="mobile_sticky"
             data-tariff-name="Участие в курсе"
             data-tariff-price="от 4 900 ₽"
-        >Ответ в WhatsApp · от 4 900 ₽</button>
+        >Проверить места · от 4 900 ₽</button>
     </main>
 
     <footer class="site-footer">
