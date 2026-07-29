@@ -29,11 +29,11 @@
                     data-cta-source="hero"
                     data-tariff-name="Участие в курсе"
                     data-tariff-price="от 4 900 ₽"
-                >Проверить наличие мест</button>
+                >Забронировать место бесплатно</button>
                 <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
             <p class="hero-reassurance">
-                Проверка занимает меньше минуты: без оплаты, банковской карты и обязательства покупать курс.
+                Закрепим место на 24 часа. Оплата и банковская карта не нужны — бронь ни к чему не обязывает.
             </p>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -323,7 +323,7 @@
                             data-cta-source="pricing"
                             data-tariff-name="Базовый"
                             data-tariff-price="4 900 ₽"
-                        >Проверить наличие мест</button>
+                        >Забронировать бесплатно</button>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
@@ -339,7 +339,7 @@
                             data-cta-source="pricing"
                             data-tariff-name="Расширенный"
                             data-tariff-price="7 900 ₽"
-                        >Проверить наличие мест</button>
+                        >Забронировать бесплатно</button>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
@@ -355,7 +355,7 @@
                             data-cta-source="pricing"
                             data-tariff-name="Корпоративный"
                             data-tariff-price="12 900 ₽"
-                        >Уточнить условия</button>
+                        >Забронировать бесплатно</button>
                     </article>
                 </div>
             </div>
@@ -365,22 +365,22 @@
             <div class="container">
                 <div class="registration-panel">
                     <div class="registration-copy">
-                        <span class="registration-eyebrow">Проверка без оплаты</span>
-                        <h2 class="section-title">Узнать, есть ли места</h2>
+                        <span class="registration-eyebrow">Бесплатная бронь на 24 часа</span>
+                        <h2 class="section-title">Закрепить место и спокойно решить</h2>
                         <p class="section-lead">
-                            Оставьте телефон — сообщим о наличии мест, уточним формат и ответим
-                            на вопросы. Имя и решение об участии можно сообщить после разговора.
+                            Оставьте телефон — подтвердим бронь места на 24 часа и ответим на вопросы.
+                            Платить сейчас не нужно: если передумаете, бронь просто отменится.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
-                            <span>Что проверим</span>
+                            <span>Что забронируем</span>
                             <strong id="selected-tariff-name">Участие в курсе</strong>
                             <b id="selected-tariff-price">от 4 900 ₽</b>
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
-                        <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
-                        <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
-                        <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
+                        <li><strong>0 ₽ сейчас</strong><span>Банковская карта не нужна</span></li>
+                        <li><strong>24 часа на решение</strong><span>Место закреплено за вами</span></li>
+                        <li><strong>Можно отказаться</strong><span>Бронь ни к чему не обязывает</span></li>
                     </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
@@ -390,7 +390,7 @@
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <button type="submit" class="btn btn-primary form-submit">Проверить наличие мест</button>
+                        <button type="submit" class="btn btn-primary form-submit">Забронировать бесплатно</button>
                         <p class="form-privacy">
                             Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
                             Мы не передаём контакты третьим лицам.
@@ -407,7 +407,7 @@
             data-cta-source="mobile_sticky"
             data-tariff-name="Участие в курсе"
             data-tariff-price="от 4 900 ₽"
-        >Проверить места · от 4 900 ₽</button>
+        >Бесплатная бронь · от 4 900 ₽</button>
     </main>
 
     <footer class="site-footer">
