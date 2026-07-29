@@ -35,6 +35,11 @@
             <p class="hero-reassurance">
                 Проверка занимает меньше минуты: без оплаты, банковской карты и обязательства покупать курс.
             </p>
+            <ul class="hero-trust" aria-label="Опыт инструкторов курса">
+                <li><strong>14 лет</strong><span>стаж врача скорой помощи</span></li>
+                <li><strong>1 200+</strong><span>слушателей обучила инструктор курса</span></li>
+                <li><strong>ERC и РКК</strong><span>подготовка и сертификаты инструкторов</span></li>
+            </ul>
             <div class="meta-grid">
                 <div class="meta-card">
                     <strong>Дата</strong>
@@ -46,7 +51,7 @@
                 </div>
                 <div class="meta-card">
                     <strong>Место</strong>
-                    Москва, ул. Примерная, 10, учебный центр «Спаси-Себя»
+                    Москва, учебный центр «Спаси-Себя». Точный адрес и схема прохода — после подтверждения места
                 </div>
             </div>
             <div class="hero-note">

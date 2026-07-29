@@ -129,6 +129,35 @@ img {
     color: #61717a;
 }
 
+.hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-trust li {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 9px 12px;
+    border: 1px solid rgba(64, 81, 90, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.hero-trust strong {
+    color: var(--heading);
+    font-size: 0.92rem;
+}
+
+.hero-trust span {
+    color: #61717a;
+    font-size: 0.82rem;
+}
+
 .meta-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -644,6 +673,14 @@ img {
     .hero-actions .btn-register,
     .hero-actions .btn-secondary {
         width: 100%;
+    }
+
+    .hero-trust {
+        display: grid;
+    }
+
+    .hero-trust li {
+        border-radius: 12px;
     }
 
     .meta-grid {
