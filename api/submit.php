@@ -23,8 +23,8 @@ if ($name === '') {
     exit;
 }
 
-if ($phone === '') {
-    echo json_encode(['ok' => false, 'error' => 'Укажите телефон.'], JSON_UNESCAPED_UNICODE);
+if ($phone === '' && $email === '') {
+    echo json_encode(['ok' => false, 'error' => 'Укажите телефон или e-mail.'], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
