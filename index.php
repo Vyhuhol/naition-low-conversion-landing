@@ -368,8 +368,8 @@
                         <span class="registration-eyebrow">Проверка без оплаты</span>
                         <h2 class="section-title">Узнать, есть ли места</h2>
                         <p class="section-lead">
-                            Оставьте имя и телефон — сообщим о наличии мест, уточним формат и ответим
-                            на вопросы. Решение об участии можно принять после разговора.
+                            Оставьте телефон — сообщим о наличии мест, уточним формат и ответим
+                            на вопросы. Имя и решение об участии можно сообщить после разговора.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
                             <span>Что проверим</span>
@@ -382,13 +382,10 @@
                         <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
                         <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
                     </ul>
-                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
+                    <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
                         <input type="hidden" name="tariff" value="Участие в курсе">
-                        <label class="form-field">
-                            <span>Имя</span>
-                            <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться">
-                        </label>
+                        <input type="hidden" name="name" value="Не указано">
                         <label class="form-field">
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">

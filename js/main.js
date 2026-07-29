@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, reducedMotion ? 0 : 1400);
             }
 
-            const nameInput = form?.querySelector('input[name="name"]');
+            const firstVisibleInput = form?.querySelector('input:not([type="hidden"])');
             window.setTimeout(() => {
-                nameInput?.focus({ preventScroll: true });
+                firstVisibleInput?.focus({ preventScroll: true });
             }, reducedMotion ? 0 : 650);
         });
     });

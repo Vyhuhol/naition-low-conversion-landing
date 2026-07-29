@@ -515,6 +515,10 @@ img {
     gap: 18px;
 }
 
+.form-grid.single-field-form {
+    grid-template-columns: minmax(0, 1fr);
+}
+
 .form-field {
     display: grid;
     align-content: start;
