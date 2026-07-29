@@ -112,6 +112,73 @@ img {
     font-size: 0.98rem;
 }
 
+.hero-quick-form {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) auto;
+    align-items: end;
+    gap: 10px 12px;
+    max-width: 680px;
+    margin: 20px 0 0;
+    padding: 16px;
+    border: 1px solid rgba(64, 81, 90, 0.16);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 24px rgba(22, 43, 53, 0.07);
+}
+
+.hero-quick-form label {
+    display: grid;
+    gap: 7px;
+    color: var(--heading);
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.hero-quick-form input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #bfc9ce;
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--heading);
+    font: inherit;
+}
+
+.hero-quick-form input:focus {
+    outline: none;
+    border-color: var(--signal);
+    box-shadow: var(--focus-ring);
+}
+
+.hero-quick-form .btn {
+    min-height: 48px;
+    white-space: nowrap;
+}
+
+.hero-quick-form p {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #61717a;
+    font-size: 0.82rem;
+}
+
+.hero-quick-message {
+    min-height: 22px;
+    max-width: 680px;
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.hero-quick-message.success {
+    color: #2e7d32;
+}
+
+.hero-quick-message.error {
+    color: #c0392b;
+}
+
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -643,6 +710,16 @@ img {
 
     .hero-actions {
         display: grid;
+    }
+
+    .hero-quick-form {
+        grid-template-columns: 1fr;
+        padding: 14px;
+    }
+
+    .hero-quick-form .btn,
+    .hero-quick-form p {
+        grid-column: auto;
     }
 
     .hero-actions .btn-register,

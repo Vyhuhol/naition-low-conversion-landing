@@ -22,6 +22,17 @@
                 <strong>от 4 900 ₽</strong>
                 <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
             </div>
+            <form class="hero-quick-form" id="hero-registration-form" action="api/submit.php" method="post">
+                <input type="hidden" name="bot_session_id" value="">
+                <input type="hidden" name="name" value="Не указано">
+                <label>
+                    <span>Телефон для проверки мест</span>
+                    <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
+                </label>
+                <button type="submit" class="btn btn-primary">Проверить наличие мест</button>
+                <p>Без оплаты и обязательств. Имя можно сообщить после звонка.</p>
+            </form>
+            <p class="hero-quick-message" id="hero-form-message" aria-live="polite"></p>
             <div class="hero-actions">
                 <button
                     type="button"
