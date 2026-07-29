@@ -7,13 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerButtons = document.querySelectorAll('.btn-register');
     const selectedTariffName = document.getElementById('selected-tariff-name');
     const selectedTariffPrice = document.getElementById('selected-tariff-price');
-    const registrationClose = registrationSection?.querySelector('.registration-close');
     const purposeInput = form?.querySelector('textarea[name="purpose"]');
     const purposeOptions = document.querySelectorAll('.purpose-option');
     const mobileBookingBar = document.querySelector('.mobile-booking-bar');
     const hero = document.querySelector('.hero');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let lastRegistrationTrigger = null;
 
     const trackGoal = (goal, params = {}) => {
         if (typeof window.ym === 'function') {
@@ -53,23 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return tariffName;
     };
 
-    const closeRegistrationDialog = () => {
-        if (!registrationSection?.classList.contains('is-dialog-open')) {
-            return;
-        }
-
-        registrationSection.classList.remove('is-dialog-open');
-        registrationSection.removeAttribute('role');
-        registrationSection.removeAttribute('aria-modal');
-        registrationSection.removeAttribute('aria-labelledby');
-        document.body.classList.remove('registration-dialog-active');
-        updateMobileBookingBar();
-
-        if (lastRegistrationTrigger instanceof HTMLElement) {
-            lastRegistrationTrigger.focus({ preventScroll: true });
-        }
-    };
-
     registerButtons.forEach((button) => {
         button.addEventListener('click', () => {
             if (!registrationSection) {
@@ -90,13 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 tariff: tariffName,
             });
 
-            lastRegistrationTrigger = button;
-            registrationSection.classList.add('is-dialog-open');
-            registrationSection.setAttribute('role', 'dialog');
-            registrationSection.setAttribute('aria-modal', 'true');
-            registrationSection.setAttribute('aria-labelledby', 'registration-title');
-            document.body.classList.add('registration-dialog-active');
-            mobileBookingBar?.classList.remove('is-visible');
+            registrationSection.scrollIntoView({
+                behavior: reducedMotion ? 'auto' : 'smooth',
+                block: 'start',
+            });
 
             if (registrationPanel) {
                 registrationPanel.classList.remove('is-highlighted');
@@ -111,22 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const nameInput = form?.querySelector('input[name="name"]');
             window.setTimeout(() => {
                 nameInput?.focus({ preventScroll: true });
-            }, reducedMotion ? 0 : 120);
+            }, reducedMotion ? 0 : 650);
         });
-    });
-
-    registrationClose?.addEventListener('click', closeRegistrationDialog);
-
-    registrationSection?.addEventListener('click', (event) => {
-        if (event.target === registrationSection) {
-            closeRegistrationDialog();
-        }
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeRegistrationDialog();
-        }
     });
 
     const updateMobileBookingBar = () => {
