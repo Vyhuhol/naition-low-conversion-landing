@@ -19,17 +19,17 @@
                 действий, сертификатом и уверенностью, что сможете помочь до приезда врачей.
             </p>
             <div class="hero-offer" aria-label="Стоимость и условия участия">
-                <strong>от 4 900 ₽</strong>
-                <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
+                <strong>4 900 ₽</strong>
+                <span>Базовый тариф · 8 часов · все практические блоки, сертификат и памятка</span>
             </div>
             <div class="hero-actions">
                 <button
                     type="button"
                     class="btn btn-primary btn-register"
                     data-cta-source="hero"
-                    data-tariff-name="Участие в курсе"
-                    data-tariff-price="от 4 900 ₽"
-                >Проверить наличие мест</button>
+                    data-tariff-name="Базовый"
+                    data-tariff-price="4 900 ₽"
+                >Проверить места за 4 900 ₽</button>
                 <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
             <p class="hero-reassurance">
@@ -373,8 +373,8 @@
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
                             <span>Что проверим</span>
-                            <strong id="selected-tariff-name">Участие в курсе</strong>
-                            <b id="selected-tariff-price">от 4 900 ₽</b>
+                            <strong id="selected-tariff-name">Базовый</strong>
+                            <b id="selected-tariff-price">4 900 ₽</b>
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
@@ -384,7 +384,7 @@
                     </ul>
                     <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
-                        <input type="hidden" name="tariff" value="Участие в курсе">
+                        <input type="hidden" name="tariff" value="Базовый">
                         <label class="form-field">
                             <span>Имя</span>
                             <input type="text" name="name" required autocomplete="name" placeholder="Как к вам обращаться">
@@ -408,9 +408,9 @@
             type="button"
             class="btn btn-primary btn-register mobile-booking-bar"
             data-cta-source="mobile_sticky"
-            data-tariff-name="Участие в курсе"
-            data-tariff-price="от 4 900 ₽"
-        >Проверить места · от 4 900 ₽</button>
+            data-tariff-name="Базовый"
+            data-tariff-price="4 900 ₽"
+        >Проверить места · 4 900 ₽</button>
     </main>
 
     <footer class="site-footer">
