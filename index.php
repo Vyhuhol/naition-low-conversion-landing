@@ -366,8 +366,8 @@
                         <span class="registration-eyebrow">Бронирование без оплаты</span>
                         <h2 class="section-title">Забронировать место</h2>
                         <p class="section-lead">
-                            Оставьте контакты — подтвердим наличие места, уточним выбранный формат
-                            и ответим на вопросы. Заполнение займёт около минуты.
+                            Оставьте имя и телефон — подтвердим наличие места, уточним выбранный формат
+                            и ответим на вопросы. Оплата сейчас не требуется.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
                             <span>Ваш выбор</span>
@@ -386,22 +386,6 @@
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <label class="form-field">
-                            <span>E-mail</span>
-                            <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="Для сертификата и материалов">
-                        </label>
-                        <div class="form-field form-field-wide">
-                            <span id="purpose-label">Зачем вам курс?</span>
-                            <div class="purpose-options" aria-labelledby="purpose-label">
-                                <button type="button" class="purpose-option" data-purpose-id="family" data-purpose-value="Хочу уверенно помочь близким" aria-pressed="false">Для себя и близких</button>
-                                <button type="button" class="purpose-option" data-purpose-id="work" data-purpose-value="Курс нужен для работы" aria-pressed="false">Для работы</button>
-                                <button type="button" class="purpose-option" data-purpose-id="team" data-purpose-value="Хочу обучить команду" aria-pressed="false">Для команды</button>
-                            </div>
-                            <label class="purpose-custom">
-                                <span>Или напишите свой вариант</span>
-                                <textarea name="purpose" required placeholder="Достаточно одной короткой фразы"></textarea>
-                            </label>
-                        </div>
                         <button type="submit" class="btn btn-primary form-submit">Забронировать место</button>
                         <p class="form-privacy">
                             Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
