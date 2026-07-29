@@ -567,13 +567,6 @@ img {
     font-weight: 400;
 }
 
-.form-field .contact-hint {
-    padding-left: 2px;
-    color: #52656e;
-    font-size: 0.82rem;
-    line-height: 1.4;
-}
-
 .form-submit {
     width: 100%;
     margin-top: 2px;
