@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (message) {
-                message.textContent = 'Место забронировано на 24 часа. Мы свяжемся с вами для подтверждения и ответим на вопросы.';
+                message.textContent = 'Заявка принята. Мы свяжемся с вами, сообщим о наличии мест и ответим на вопросы.';
                 message.className = 'form-message success';
             }
 
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Забронировать бесплатно';
+                submitButton.textContent = 'Проверить наличие мест';
             }
         }
     });
