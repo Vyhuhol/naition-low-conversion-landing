@@ -480,6 +480,35 @@ img {
     font-size: 1.25rem;
 }
 
+.commitment-points {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.commitment-points li {
+    display: grid;
+    gap: 3px;
+    padding: 13px 14px;
+    border: 1px solid #d7e0e4;
+    border-radius: 12px;
+    background: var(--bg-soft);
+}
+
+.commitment-points strong {
+    color: var(--heading);
+    font-size: 0.9rem;
+}
+
+.commitment-points span {
+    color: #66777f;
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -632,6 +661,10 @@ img {
 
     .selected-tariff {
         margin-top: 22px;
+    }
+
+    .commitment-points {
+        grid-template-columns: 1fr;
     }
 
     .form-grid {
