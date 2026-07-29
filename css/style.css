@@ -595,6 +595,11 @@ img {
     color: #2e7d32;
 }
 
+.form-message.success a {
+    color: inherit;
+    font-weight: 800;
+}
+
 .form-message.error {
     color: #c0392b;
 }
