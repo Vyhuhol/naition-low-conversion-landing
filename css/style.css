@@ -232,38 +232,6 @@ img {
     font-size: 1.05rem;
 }
 
-.program-points {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px 22px;
-    margin: 0;
-    padding-left: 20px;
-}
-
-.program-points li {
-    padding-left: 2px;
-}
-
-.program-cta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 22px;
-    padding: 22px 24px;
-    border-radius: 18px;
-    background: var(--peach);
-    color: var(--heading);
-}
-
-.program-cta p {
-    margin: 0;
-}
-
-.program-cta .btn {
-    flex: 0 0 auto;
-}
-
 .injury-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
@@ -680,14 +648,6 @@ img {
     .hero-actions .btn-register,
     .hero-actions .btn-secondary {
         width: 100%;
-    }
-
-    .program-points {
-        grid-template-columns: 1fr;
-    }
-
-    .program-cta {
-        display: grid;
     }
 
     .meta-grid {
