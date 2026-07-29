@@ -362,9 +362,12 @@
         <section class="section registration-section" id="registration">
             <div class="container">
                 <div class="registration-panel">
+                    <button type="button" class="registration-close" aria-label="Закрыть форму">
+                        Вернуться к странице
+                    </button>
                     <div class="registration-copy">
                         <span class="registration-eyebrow">Бронирование без оплаты</span>
-                        <h2 class="section-title">Забронировать место</h2>
+                        <h2 class="section-title" id="registration-title">Забронировать место</h2>
                         <p class="section-lead">
                             Оставьте имя и телефон — подтвердим наличие места, уточним выбранный формат
                             и ответим на вопросы. Оплата сейчас не требуется.
