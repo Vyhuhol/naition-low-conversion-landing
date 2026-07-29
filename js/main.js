@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrationPanel = registrationSection?.querySelector('.registration-panel');
     const form = document.getElementById('registration-form');
     const message = document.getElementById('form-message');
-    const heroForm = document.getElementById('hero-registration-form');
-    const heroMessage = document.getElementById('hero-form-message');
     const registerButtons = document.querySelectorAll('.btn-register');
     const selectedTariffName = document.getElementById('selected-tariff-name');
     const selectedTariffPrice = document.getElementById('selected-tariff-price');
+    const purposeInput = form?.querySelector('textarea[name="purpose"]');
+    const purposeOptions = document.querySelectorAll('.purpose-option');
     const mobileBookingBar = document.querySelector('.mobile-booking-bar');
     const hero = document.querySelector('.hero');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -112,109 +112,124 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateMobileBookingBar, { passive: true });
     window.addEventListener('resize', updateMobileBookingBar);
 
-    const leadForms = [
-        { element: heroForm, message: heroMessage, source: 'hero_inline' },
-        { element: form, message, source: 'registration' },
-    ].filter(({ element }) => element instanceof HTMLFormElement);
-
-    if (leadForms.length === 0) {
+    if (!form) {
         return;
     }
 
-    const bindLeadForm = (leadForm, leadMessage, source) => {
-        let formStarted = false;
-        let formViewed = false;
-        const getTariff = () => leadForm.dataset.selectedTariff || 'Участие в курсе';
+    let formStarted = false;
 
-        leadForm.addEventListener('input', () => {
-            if (formStarted) {
+    purposeOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+            if (!(purposeInput instanceof HTMLTextAreaElement)) {
                 return;
             }
 
-            formStarted = true;
-            trackGoal('form_start', {
-                source,
-                tariff: getTariff(),
+            purposeOptions.forEach((item) => {
+                item.classList.remove('is-selected');
+                item.setAttribute('aria-pressed', 'false');
+            });
+
+            option.classList.add('is-selected');
+            option.setAttribute('aria-pressed', 'true');
+            purposeInput.value = option.dataset.purposeValue || '';
+            purposeInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+            trackGoal('purpose_option_select', {
+                option: option.dataset.purposeId || 'unknown',
             });
         });
+    });
 
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                if (formViewed || !entries.some((entry) => entry.isIntersecting)) {
-                    return;
-                }
+    purposeInput?.addEventListener('input', (event) => {
+        if (event.isTrusted) {
+            purposeOptions.forEach((option) => {
+                option.classList.remove('is-selected');
+                option.setAttribute('aria-pressed', 'false');
+            });
+        }
+    });
 
-                formViewed = true;
-                trackGoal('form_view', { source });
-                observer.disconnect();
-            }, { threshold: 0.35 });
-
-            observer.observe(leadForm);
+    form.addEventListener('input', () => {
+        if (formStarted) {
+            return;
         }
 
-        leadForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
+        formStarted = true;
+        trackGoal('form_start', {
+            tariff: form.dataset.selectedTariff || 'Участие в курсе',
+        });
+    });
 
-            const submitButton = leadForm.querySelector('button[type="submit"]');
-            const idleLabel = submitButton?.textContent || 'Проверить наличие мест';
-            const formData = new FormData(leadForm);
+    if ('IntersectionObserver' in window) {
+        let formViewed = false;
+        const observer = new IntersectionObserver((entries) => {
+            if (formViewed || !entries.some((entry) => entry.isIntersecting)) {
+                return;
+            }
 
-            trackGoal('form_submit_attempt', {
-                source,
-                tariff: getTariff(),
+            formViewed = true;
+            trackGoal('form_view');
+            observer.disconnect();
+        }, { threshold: 0.35 });
+
+        observer.observe(form);
+    }
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        const formData = new FormData(form);
+
+        trackGoal('form_submit_attempt', {
+            tariff: form.dataset.selectedTariff || 'Участие в курсе',
+        });
+
+        if (submitButton instanceof HTMLButtonElement) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Отправляем…';
+        }
+
+        if (message) {
+            message.textContent = '';
+            message.className = 'form-message';
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
             });
 
+            const data = await response.json();
+
+            if (!response.ok || !data.ok) {
+                throw new Error(data.error || 'Не удалось отправить заявку.');
+            }
+
+            trackGoal('form_submit_success', {
+                tariff: form.dataset.selectedTariff || 'Участие в курсе',
+            });
+
+            if (message) {
+                message.textContent = 'Заявка принята. Мы свяжемся с вами, сообщим о наличии мест и ответим на вопросы.';
+                message.className = 'form-message success';
+            }
+
+            form.reset();
+            formStarted = false;
+        } catch (error) {
+            trackGoal('form_submit_error');
+
+            if (message) {
+                message.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';
+                message.className = 'form-message error';
+            }
+        } finally {
             if (submitButton instanceof HTMLButtonElement) {
-                submitButton.disabled = true;
-                submitButton.textContent = 'Отправляем…';
+                submitButton.disabled = false;
+                submitButton.textContent = 'Проверить наличие мест';
             }
-
-            if (leadMessage) {
-                leadMessage.textContent = '';
-                leadMessage.classList.remove('success', 'error');
-            }
-
-            try {
-                const response = await fetch(leadForm.action, {
-                    method: 'POST',
-                    body: formData,
-                });
-
-                const data = await response.json();
-
-                if (!response.ok || !data.ok) {
-                    throw new Error(data.error || 'Не удалось отправить заявку.');
-                }
-
-                trackGoal('form_submit_success', {
-                    source,
-                    tariff: getTariff(),
-                });
-
-                if (leadMessage) {
-                    leadMessage.textContent = 'Заявка принята. Мы сообщим о наличии мест и ответим на вопросы.';
-                    leadMessage.classList.add('success');
-                }
-
-                leadForm.reset();
-                formStarted = false;
-            } catch (error) {
-                trackGoal('form_submit_error', { source });
-
-                if (leadMessage) {
-                    leadMessage.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';
-                    leadMessage.classList.add('error');
-                }
-            } finally {
-                if (submitButton instanceof HTMLButtonElement) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = idleLabel;
-                }
-            }
-        });
-    };
-
-    leadForms.forEach(({ element, message: leadMessage, source }) => {
-        bindLeadForm(element, leadMessage, source);
+        }
     });
 });
