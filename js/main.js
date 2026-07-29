@@ -179,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const submitButton = form.querySelector('button[type="submit"]');
-        const idleLabel = submitButton?.textContent || 'Получить памятку бесплатно';
         const formData = new FormData(form);
 
         trackGoal('form_submit_attempt', {
@@ -213,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (message) {
-                message.innerHTML = 'Заявка принята. <a href="checklist.html" target="_blank" rel="noopener">Открыть памятку по первой помощи</a>.';
+                message.textContent = 'Заявка принята. Мы свяжемся с вами, сообщим о наличии мест и ответим на вопросы.';
                 message.className = 'form-message success';
             }
 
@@ -229,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = false;
-                submitButton.textContent = idleLabel;
+                submitButton.textContent = 'Проверить наличие мест';
             }
         }
     });
