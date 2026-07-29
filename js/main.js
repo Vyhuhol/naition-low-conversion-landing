@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? 'hero_cta_click'
                 : source === 'mobile_sticky'
                     ? 'mobile_cta_click'
+                    : source === 'program'
+                        ? 'program_cta_click'
                     : 'pricing_cta_click';
 
             trackGoal(ctaGoal, {
