@@ -380,7 +380,7 @@
                     <ul class="commitment-points" aria-label="Условия заявки">
                         <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
                         <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
-                        <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
+                        <li><strong>Без рассылок</strong><span>Контакт используем только для ответа по заявке</span></li>
                     </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
@@ -389,6 +389,9 @@
                         <label class="form-field">
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
+                            <small class="contact-hint">
+                                Нужен только чтобы сообщить, есть ли места, и ответить на вопросы. В рассылки не добавляем.
+                            </small>
                         </label>
                         <button type="submit" class="btn btn-primary form-submit">Проверить наличие мест</button>
                         <p class="form-privacy">
