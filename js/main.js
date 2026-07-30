@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showSelectedTariff = (button) => {
         const tariffName = button.dataset.tariffName || 'Участие в курсе';
-        const tariffPrice = button.dataset.tariffPrice || 'от 4 900 ₽';
+        const tariffPrice = button.dataset.tariffPrice || 'от 2 900 ₽';
 
         if (selectedTariffName) {
             selectedTariffName.textContent = tariffName;
