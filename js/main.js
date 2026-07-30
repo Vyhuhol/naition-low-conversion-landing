@@ -134,7 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             form.reset();
-            setTariff('Базовый');
+            if (purposeField instanceof HTMLInputElement) {
+                purposeField.value = defaultPurpose;
+            }
+            setTariff('');
         } catch (error) {
             if (message) {
                 message.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';

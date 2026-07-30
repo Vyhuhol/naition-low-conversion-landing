@@ -126,18 +126,17 @@
                     </p>
                     <p class="selected-tariff has-selection" id="selected-tariff">Выбран тариф «Базовый». Заполните форму ниже.</p>
                     <form class="form-grid form-grid-compact" id="registration-form" action="api/submit.php" method="post">
-                        <input type="hidden" name="bot_session_id" value="">
                         <input type="hidden" name="tariff" id="tariff-field" value="Базовый">
                         <input type="hidden" name="purpose" id="purpose-field" value="Тариф: Базовый. Запись на курс первой помощи">
-                        <label class="form-field">
+                        <label>
                             Имя
                             <input type="text" name="name" required autocomplete="name">
                         </label>
-                        <label class="form-field">
+                        <label>
                             Телефон
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel">
                         </label>
-                        <label class="form-field form-field-wide">
+                        <label class="form-field-wide">
                             E-mail
                             <input type="email" name="email" required autocomplete="email">
                         </label>
@@ -152,124 +151,120 @@
             <div class="container">
                 <h2 class="section-title">Программа курса</h2>
                 <p class="section-lead program-intro">
-                    За один день пройдём путь от оценки обстановки до цельных сценариев.
-                    Каждый модуль включает короткую теорию, показ инструктора и практику.
+                    За один день — от оценки обстановки до цельного сценария помощи.
+                    В каждом модуле: короткий разбор, демонстрация и практика руками.
                 </p>
                 <div class="program-list">
                     <article class="program-module">
                         <h3>10:00 – 11:00 · Оценка обстановки и безопасность</h3>
                         <p>
-                            Безопасный подход к пострадавшему, проверка сознания и дыхания,
-                            вызов скорой и распределение задач между очевидцами.
+                            Оценка рисков, проверка сознания и дыхания, вызов помощи. Алгоритм на манекене и в паре.
                         </p>
                     </article>
                     <article class="program-module">
                         <h3>11:00 – 12:30 · Сердечно-легочная реанимация</h3>
                         <p>
-                            Полный алгоритм СЛР для взрослых, компрессии на манекене,
-                            работа в паре и использование тренировочного дефибриллятора AED.
+                            Компрессии, смена спасателя, тренировочный AED. Полный цикл до передачи медикам.
                         </p>
                     </article>
                     <article class="program-module">
                         <h3>12:30 – 13:30 · Обед и разбор кейсов</h3>
                         <p>
-                            Перерыв и разбор реальных историй из практики инструкторов:
-                            что помогло очевидцам действовать и какие ошибки встречаются чаще всего.
+                            Реальные ситуации из практики инструкторов и типичные ошибки очевидцев.
                         </p>
                     </article>
                     <article class="program-module">
                         <h3>13:30 – 15:00 · Кровотечения и шок</h3>
                         <p>
-                            Давящая повязка, турникет и признаки шока. Практика на
-                            имитаторах ран и действия в стрессовой обстановке.
+                            Давящая повязка, турникет, признаки шока. Практика с имитаторами ран.
                         </p>
                     </article>
                     <article class="program-module">
                         <h3>15:00 – 16:30 · Переломы, вывихи, ожоги</h3>
                         <p>
-                            Иммобилизация подручными средствами, безопасное перемещение
-                            пострадавшего и правильное охлаждение ожогов.
+                            Иммобилизация подручными средствами и безопасная помощь при ожогах.
                         </p>
                     </article>
                     <article class="program-module">
                         <h3>16:30 – 18:00 · Итоговая практика и сертификация</h3>
                         <p>
-                            Цельные сценарии с несколькими пострадавшими, обратная связь
-                            инструктора, ответы на вопросы и вручение сертификатов.
+                            Сценарии с несколькими пострадавшими, обратная связь и сертификат.
                         </p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="injuries">
             <div class="container">
                 <h2 class="section-title">Виды травм и состояний</h2>
                 <p class="section-lead">
-                    Отрабатываем самые частые ситуации дома, на улице, на работе и в поездках.
+                    Самые частые ситуации, с которыми сталкиваются очевидцы. На курсе отрабатываем их руками.
                 </p>
-                <div class="injury-grid">
+                <div class="injury-grid injury-grid-compact">
                     <article class="injury-card">
                         <h3>Кровотечения</h3>
-                        <p>Артериальные, венозные и капиллярные кровотечения, давящая повязка, турникет, контроль после остановки крови.</p>
+                        <p>Давящая повязка и турникет</p>
                     </article>
                     <article class="injury-card">
                         <h3>Переломы и вывихи</h3>
-                        <p>Признаки перелома, иммобилизация, транспортная шина, ошибки при перемещении пострадавшего.</p>
+                        <p>Иммобилизация подручными средствами</p>
                     </article>
                     <article class="injury-card">
                         <h3>Ожоги</h3>
-                        <p>Термические и химические ожоги, охлаждение, стерильная повязка, когда нельзя снимать одежду с места ожога.</p>
+                        <p>Охлаждение и стерильная повязка</p>
                     </article>
                     <article class="injury-card">
                         <h3>Обмороки и шок</h3>
-                        <p>Признаки шока, положение тела, контроль дыхания, согревание, что нельзя давать пострадавшему.</p>
+                        <p>Положение тела и контроль дыхания</p>
                     </article>
                     <article class="injury-card">
                         <h3>Остановка дыхания</h3>
-                        <p>СЛР, работа в паре, использование автоматического дефibrиллятора, действия до приезда скорой.</p>
+                        <p>СЛР и AED до приезда скорой</p>
                     </article>
                     <article class="injury-card">
                         <h3>Травмы головы и позвоночника</h3>
-                        <p>Подозрение на травму шеи и спины, когда нельзя менять положение, фиксация головы и ожидание медиков.</p>
+                        <p>Когда нельзя менять положение</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section-compact legal-section">
+        <section class="section section-compact legal-section" id="legal">
             <div class="container">
                 <h2 class="section-title">Юридические аспекты</h2>
                 <p class="section-lead">
-                    Разберём, что разрешено очевидцу и как помогать спокойно и безопасно.
+                    Что говорит закон и как действовать, не боясь помочь.
                 </p>
-                <div class="legal-block">
-                    <h3>Добросовестный помощник</h3>
-                    <p>
-                        Помогайте в пределах своих навыков, не подвергая дополнительному риску
-                        себя и пострадавшего.
-                    </p>
-                </div>
-                <div class="legal-block">
-                    <h3>Границы ответственности</h3>
-                    <p>
-                        Узнаете, когда действовать самостоятельно, а когда дождаться медиков.
-                    </p>
-                </div>
-                <div class="legal-block">
-                    <h3>Документирование и вызов служб</h3>
-                    <p>
-                        Потренируетесь чётко передавать диспетчеру и медикам важную информацию.
-                    </p>
+                <div class="legal-list">
+                    <article class="legal-block">
+                        <h3>Добросовестный помощник</h3>
+                        <p>
+                            Если вы помогаете в разумных пределах и без грубой неосторожности,
+                            закон защищает вас от необоснованных претензий.
+                        </p>
+                    </article>
+                    <article class="legal-block">
+                        <h3>Границы ответственности</h3>
+                        <p>
+                            Какие действия разумны, когда ждать медиков и как фиксировать обстоятельства.
+                        </p>
+                    </article>
+                    <article class="legal-block">
+                        <h3>Документирование и вызов служб</h3>
+                        <p>
+                            Что сообщить диспетчеру и медикам по прибытии.
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="emotional-photo">
+        <section class="emotional-photo" id="photo">
             <img src="images/cpr-training.jpg" alt="Практика сердечно-легочной реанимации на манекене">
         </section>
 
-        <section class="section section-compact">
+        <section class="section section-compact" id="instructors">
             <div class="container">
                 <h2 class="section-title">Инструкторы</h2>
                 <p class="section-lead">
