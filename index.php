@@ -125,6 +125,14 @@
                         Укажите имя и контакты — свяжемся, чтобы подтвердить место.
                     </p>
                     <p class="selected-tariff has-selection" id="selected-tariff">Выбран тариф «Базовый». Заполните форму ниже.</p>
+                    <div class="application-next-step" aria-label="Что произойдёт после заявки">
+                        <strong>Что произойдёт после заявки</strong>
+                        <ul>
+                            <li>Подтвердим место и выбранный тариф</li>
+                            <li>Ответим на вопросы о курсе</li>
+                            <li>Оплата — только после подтверждения</li>
+                        </ul>
+                    </div>
                     <form class="form-grid form-grid-compact" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
                         <input type="hidden" name="tariff" id="tariff-field" value="Базовый">
