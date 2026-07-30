@@ -336,11 +336,6 @@
                             <b id="selected-tariff-price">0 ₽</b>
                         </div>
                     </div>
-                    <ul class="commitment-points" aria-label="Условия заявки">
-                        <li><strong>Полный день бесплатно</strong><span>Все шесть модулей и практика входят</span></li>
-                        <li><strong>Без банковской карты</strong><span>Платить за базовый курс не нужно</span></li>
-                        <li><strong>Контакт только для записи</strong><span>Подтвердим место и детали курса</span></li>
-                    </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
                         <input type="hidden" name="tariff" value="Бесплатный полный курс">
@@ -355,6 +350,11 @@
                             Мы не передаём контакты третьим лицам.
                         </p>
                     </form>
+                    <ul class="commitment-points" aria-label="Условия заявки">
+                        <li><strong>Полный день бесплатно</strong><span>Все шесть модулей и практика входят</span></li>
+                        <li><strong>Без банковской карты</strong><span>Платить за базовый курс не нужно</span></li>
+                        <li><strong>Контакт только для записи</strong><span>Подтвердим место и детали курса</span></li>
+                    </ul>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
             </div>
