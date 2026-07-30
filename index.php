@@ -57,6 +57,46 @@
     </header>
 
     <main>
+        <section class="section registration-section" id="registration">
+            <div class="container">
+                <div class="registration-panel">
+                    <div class="registration-copy">
+                        <span class="registration-eyebrow">Проверка без оплаты</span>
+                        <h2 class="section-title">Узнать, есть ли места</h2>
+                        <p class="section-lead">
+                            Оставьте телефон — сообщим о наличии мест, уточним формат и ответим
+                            на вопросы. Имя и решение об участии можно сообщить после разговора.
+                        </p>
+                        <div class="selected-tariff" id="selected-tariff" aria-live="polite">
+                            <span>Что проверим</span>
+                            <strong id="selected-tariff-name">Участие в курсе</strong>
+                            <b id="selected-tariff-price">от 4 900 ₽</b>
+                        </div>
+                    </div>
+                    <ul class="commitment-points" aria-label="Условия заявки">
+                        <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
+                        <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
+                        <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
+                    </ul>
+                    <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
+                        <input type="hidden" name="bot_session_id" value="">
+                        <input type="hidden" name="tariff" value="Участие в курсе">
+                        <input type="hidden" name="name" value="Не указано">
+                        <label class="form-field">
+                            <span>Телефон</span>
+                            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
+                        </label>
+                        <button type="submit" class="btn btn-primary form-submit">Проверить наличие мест</button>
+                        <p class="form-privacy">
+                            Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
+                            Мы не передаём контакты третьим лицам.
+                        </p>
+                    </form>
+                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <h2 class="section-title">О курсе</h2>
@@ -357,46 +397,6 @@
                             data-tariff-price="12 900 ₽"
                         >Уточнить условия</button>
                     </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section registration-section" id="registration">
-            <div class="container">
-                <div class="registration-panel">
-                    <div class="registration-copy">
-                        <span class="registration-eyebrow">Проверка без оплаты</span>
-                        <h2 class="section-title">Узнать, есть ли места</h2>
-                        <p class="section-lead">
-                            Оставьте телефон — сообщим о наличии мест, уточним формат и ответим
-                            на вопросы. Имя и решение об участии можно сообщить после разговора.
-                        </p>
-                        <div class="selected-tariff" id="selected-tariff" aria-live="polite">
-                            <span>Что проверим</span>
-                            <strong id="selected-tariff-name">Участие в курсе</strong>
-                            <b id="selected-tariff-price">от 4 900 ₽</b>
-                        </div>
-                    </div>
-                    <ul class="commitment-points" aria-label="Условия заявки">
-                        <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
-                        <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
-                        <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
-                    </ul>
-                    <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
-                        <input type="hidden" name="bot_session_id" value="">
-                        <input type="hidden" name="tariff" value="Участие в курсе">
-                        <input type="hidden" name="name" value="Не указано">
-                        <label class="form-field">
-                            <span>Телефон</span>
-                            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
-                        </label>
-                        <button type="submit" class="btn btn-primary form-submit">Проверить наличие мест</button>
-                        <p class="form-privacy">
-                            Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
-                            Мы не передаём контакты третьим лицам.
-                        </p>
-                    </form>
-                    <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
             </div>
         </section>
