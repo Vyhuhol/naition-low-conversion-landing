@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const showSelectedTariff = (button) => {
-        const tariffName = button.dataset.tariffName || 'Бесплатный полный курс';
-        const tariffPrice = button.dataset.tariffPrice || '0 ₽';
+        const tariffName = button.dataset.tariffName || 'Участие в курсе';
+        const tariffPrice = button.dataset.tariffPrice || 'от 4 900 ₽';
 
         if (selectedTariffName) {
             selectedTariffName.textContent = tariffName;
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         formStarted = true;
         trackGoal('form_start', {
-            tariff: form.dataset.selectedTariff || 'Бесплатный полный курс',
+            tariff: form.dataset.selectedTariff || 'Участие в курсе',
         });
     });
 
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(form);
 
         trackGoal('form_submit_attempt', {
-            tariff: form.dataset.selectedTariff || 'Бесплатный полный курс',
+            tariff: form.dataset.selectedTariff || 'Участие в курсе',
         });
 
         if (submitButton instanceof HTMLButtonElement) {
@@ -208,11 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             trackGoal('form_submit_success', {
-                tariff: form.dataset.selectedTariff || 'Бесплатный полный курс',
+                tariff: form.dataset.selectedTariff || 'Участие в курсе',
             });
 
             if (message) {
-                message.textContent = 'Заявка принята. Мы свяжемся с вами и подтвердим участие в бесплатном полном курсе.';
+                message.textContent = 'Заявка принята. Мы свяжемся с вами, сообщим о наличии мест и ответим на вопросы.';
                 message.className = 'form-message success';
             }
 
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Отправить заявку на участие';
+                submitButton.textContent = 'Подобрать дату';
             }
         }
     });

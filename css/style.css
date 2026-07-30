@@ -112,45 +112,6 @@ img {
     font-size: 0.98rem;
 }
 
-.hero-practice-loop {
-    margin: 28px 0;
-    padding: 22px;
-    border: 1px solid rgba(29, 58, 68, 0.12);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.58);
-}
-
-.practice-loop-kicker {
-    margin: 0 0 6px;
-    color: var(--coral-dark);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.hero-practice-loop h2 {
-    margin: 0 0 16px;
-    font-size: clamp(1.2rem, 2vw, 1.55rem);
-}
-
-.practice-loop-steps {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.practice-loop-steps li {
-    display: grid;
-    gap: 6px;
-    padding: 14px;
-    border-radius: 12px;
-    background: var(--white);
-}
-
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -684,13 +645,9 @@ img {
         display: grid;
     }
 
-    .hero-actions .hero-cta,
+    .hero-actions .btn-register,
     .hero-actions .btn-secondary {
         width: 100%;
-    }
-
-    .practice-loop-steps {
-        grid-template-columns: 1fr;
     }
 
     .meta-grid {
