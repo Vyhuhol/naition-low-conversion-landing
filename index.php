@@ -19,21 +19,21 @@
                 и помощь при травмах на манекенах под контролем инструкторов.
             </p>
             <div class="hero-offer" aria-label="Стоимость и условия участия">
-                <strong>2 900 ₽</strong>
-                <span>Базовый тариф · полный день практики · сертификат и памятка</span>
+                <strong>от 2 900 ₽</strong>
+                <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
             </div>
             <div class="hero-actions">
                 <button
                     type="button"
                     class="btn btn-primary btn-register"
                     data-cta-source="hero"
-                    data-tariff-name="Базовый"
-                    data-tariff-price="2 900 ₽"
-                >Забронировать базовый тариф</button>
+                    data-tariff-name="Участие в курсе"
+                    data-tariff-price="от 2 900 ₽"
+                >Подобрать удобную дату</button>
                 <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
             <p class="hero-reassurance">
-                Без предоплаты. Бесплатный перенос на другую дату и полный возврат при отмене за 24 часа.
+                Три ближайшие субботы на выбор. Проверка мест — без оплаты, банковской карты и обязательства покупать курс.
             </p>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -309,13 +309,13 @@
                     Выберите формат участия. Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
                 </p>
                 <div class="pricing-grid">
-                    <article class="pricing-card featured">
+                    <article class="pricing-card">
                         <h3>Базовый</h3>
                         <div class="price">2 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Участие в полном однодневном курсе</li>
                             <li>Сертификат и памятка</li>
-                            <li>Бесплатный перенос или возврат</li>
+                            <li>Кофе-брейки</li>
                         </ul>
                         <button
                             type="button"
@@ -325,7 +325,7 @@
                             data-tariff-price="2 900 ₽"
                         >Подобрать дату</button>
                     </article>
-                    <article class="pricing-card">
+                    <article class="pricing-card featured">
                         <h3>Расширенный</h3>
                         <div class="price">4 900 ₽</div>
                         <ul class="pricing-list">
@@ -365,32 +365,32 @@
             <div class="container">
                 <div class="registration-panel">
                     <div class="registration-copy">
-                        <span class="registration-eyebrow">Базовый тариф · 2 900 ₽</span>
-                        <h2 class="section-title">Забронировать место без оплаты</h2>
+                        <span class="registration-eyebrow">Три ближайшие даты на выбор</span>
+                        <h2 class="section-title">Подобрать удобную группу</h2>
                         <p class="section-lead">
-                            Оставьте телефон — сообщим о местах и закрепим базовый тариф.
-                            Оплата понадобится только после того, как вы подтвердите удобную дату.
+                            Оставьте телефон — сообщим о местах на 15, 22 и 29 августа.
+                            Если эти субботы не подходят, предложим следующую дату.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
-                            <span>Вы выбрали</span>
-                            <strong id="selected-tariff-name">Базовый</strong>
-                            <b id="selected-tariff-price">2 900 ₽</b>
+                            <span>Что проверим</span>
+                            <strong id="selected-tariff-name">Участие в курсе</strong>
+                            <b id="selected-tariff-price">от 2 900 ₽</b>
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
-                        <li><strong>Без предоплаты</strong><span>Сначала подтвердите дату и условия</span></li>
-                        <li><strong>Можно перенести</strong><span>Бесплатно выберите другую группу</span></li>
-                        <li><strong>Можно отменить</strong><span>Полный возврат при отмене за 24 часа</span></li>
+                        <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
+                        <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
+                        <li><strong>Удобная дата</strong><span>Три ближайшие субботы или следующая группа</span></li>
                     </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
-                        <input type="hidden" name="tariff" value="Базовый">
+                        <input type="hidden" name="tariff" value="Участие в курсе">
                         <input type="hidden" name="name" value="Не указано">
                         <label class="form-field">
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <button type="submit" class="btn btn-primary form-submit">Забронировать без оплаты</button>
+                        <button type="submit" class="btn btn-primary form-submit">Подобрать дату</button>
                         <p class="form-privacy">
                             Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
                             Мы не передаём контакты третьим лицам.
@@ -405,9 +405,9 @@
             type="button"
             class="btn btn-primary btn-register mobile-booking-bar"
             data-cta-source="mobile_sticky"
-            data-tariff-name="Базовый"
-            data-tariff-price="2 900 ₽"
-        >Базовый · 2 900 ₽ · без оплаты</button>
+            data-tariff-name="Участие в курсе"
+            data-tariff-price="от 2 900 ₽"
+        >Подобрать дату · от 2 900 ₽</button>
     </main>
 
     <footer class="site-footer">
