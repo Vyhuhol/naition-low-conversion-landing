@@ -1,178 +1,103 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const counterId = 111075366;
+    const COUNTER_ID = 111075366;
     const registrationSection = document.getElementById('registration');
-    const registrationPanel = registrationSection?.querySelector('.registration-panel');
     const form = document.getElementById('registration-form');
     const message = document.getElementById('form-message');
+    const selectedTariff = document.getElementById('selected-tariff');
+    const purposeField = document.getElementById('purpose-field');
+    const tariffInput = document.getElementById('tariff-field');
     const registerButtons = document.querySelectorAll('.btn-register');
-    const selectedTariffName = document.getElementById('selected-tariff-name');
-    const selectedTariffPrice = document.getElementById('selected-tariff-price');
-    const purposeInput = form?.querySelector('textarea[name="purpose"]');
-    const purposeOptions = document.querySelectorAll('.purpose-option');
-    const mobileBookingBar = document.querySelector('.mobile-booking-bar');
-    const hero = document.querySelector('.hero');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const defaultPurpose = 'Запись на курс первой помощи';
 
-    const trackGoal = (goal, params = {}) => {
-        if (typeof window.ym === 'function') {
-            window.ym(counterId, 'reachGoal', goal, params);
+    const trackGoal = (goalName, params) => {
+        if (typeof ym !== 'function') {
+            return;
+        }
+
+        try {
+            ym(COUNTER_ID, 'reachGoal', goalName, params || {});
+        } catch (error) {
+            // Analytics must never interrupt the booking path.
         }
     };
 
-    const showSelectedTariff = (button) => {
-        const tariffName = button.dataset.tariffName || 'Участие в курсе';
-        const tariffPrice = button.dataset.tariffPrice || 'от 4 900 ₽';
+    const scrollToRegistration = () => {
+        registrationSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
-        if (selectedTariffName) {
-            selectedTariffName.textContent = tariffName;
+    const setTariff = (tariffName) => {
+        if (tariffInput instanceof HTMLInputElement) {
+            tariffInput.value = tariffName || '';
         }
 
-        if (selectedTariffPrice) {
-            selectedTariffPrice.textContent = tariffPrice;
+        if (purposeField instanceof HTMLInputElement) {
+            purposeField.value = tariffName
+                ? `Тариф: ${tariffName}. ${defaultPurpose}`
+                : defaultPurpose;
         }
 
-        if (form) {
-            form.dataset.selectedTariff = tariffName;
-            const tariffInput = form.querySelector('input[name="tariff"]');
-            if (tariffInput instanceof HTMLInputElement) {
-                tariffInput.value = tariffName;
+        if (selectedTariff instanceof HTMLElement) {
+            if (tariffName) {
+                selectedTariff.textContent = `Выбран тариф «${tariffName}». Заполните форму ниже.`;
+                selectedTariff.classList.add('has-selection');
+            } else {
+                selectedTariff.textContent = 'Выберите тариф выше — здесь появится выбранный формат.';
+                selectedTariff.classList.remove('has-selection');
             }
         }
 
-        document.querySelectorAll('.pricing-card.is-selected').forEach((card) => {
-            card.classList.remove('is-selected');
+        registerButtons.forEach((button) => {
+            const isActive = (button.getAttribute('data-tariff') || '') === tariffName;
+            button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            button.closest('.pricing-card')?.classList.toggle('is-selected', isActive);
         });
-
-        const pricingCard = button.closest('.pricing-card');
-        if (pricingCard) {
-            pricingCard.classList.add('is-selected');
-        }
-
-        return tariffName;
     };
 
     registerButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            if (!registrationSection) {
-                return;
+            const tariff = button.getAttribute('data-tariff') || '';
+            const source = button.getAttribute('data-track') || 'register_click';
+
+            setTariff(tariff);
+            trackGoal(source, { tariff });
+            trackGoal('click_register', { source, tariff });
+            scrollToRegistration();
+
+            const nameInput = form?.querySelector('input[name="name"]');
+            if (nameInput instanceof HTMLInputElement) {
+                window.setTimeout(() => nameInput.focus(), 400);
             }
-
-            const source = button.dataset.ctaSource || 'unknown';
-            const tariffName = showSelectedTariff(button);
-
-            const ctaGoal = source === 'hero'
-                ? 'hero_cta_click'
-                : source === 'mobile_sticky'
-                    ? 'mobile_cta_click'
-                    : 'pricing_cta_click';
-
-            trackGoal(ctaGoal, {
-                source,
-                tariff: tariffName,
-            });
-
-            registrationSection.scrollIntoView({
-                behavior: reducedMotion ? 'auto' : 'smooth',
-                block: 'start',
-            });
-
-            if (registrationPanel) {
-                registrationPanel.classList.remove('is-highlighted');
-                window.requestAnimationFrame(() => {
-                    registrationPanel.classList.add('is-highlighted');
-                });
-                window.setTimeout(() => {
-                    registrationPanel.classList.remove('is-highlighted');
-                }, reducedMotion ? 0 : 1400);
-            }
-
-            const firstVisibleInput = form?.querySelector('input:not([type="hidden"])');
-            window.setTimeout(() => {
-                firstVisibleInput?.focus({ preventScroll: true });
-            }, reducedMotion ? 0 : 650);
         });
     });
 
-    const updateMobileBookingBar = () => {
-        if (!mobileBookingBar || !hero || !registrationSection) {
+    document.querySelectorAll('[data-track]').forEach((element) => {
+        if (element.classList.contains('btn-register')) {
             return;
         }
 
-        const isMobile = window.matchMedia('(max-width: 720px)').matches;
-        const heroPassed = hero.getBoundingClientRect().bottom < 0;
-        const registrationReached = registrationSection.getBoundingClientRect().top < window.innerHeight * 0.7;
+        element.addEventListener('click', () => {
+            const goalName = element.getAttribute('data-track');
+            if (goalName) {
+                trackGoal(goalName);
+            }
+        });
+    });
 
-        mobileBookingBar.classList.toggle(
-            'is-visible',
-            isMobile && heroPassed && !registrationReached
-        );
-    };
-
-    updateMobileBookingBar();
-    window.addEventListener('scroll', updateMobileBookingBar, { passive: true });
-    window.addEventListener('resize', updateMobileBookingBar);
+    setTariff('Базовый');
 
     if (!form) {
         return;
     }
 
-    let formStarted = false;
-
-    purposeOptions.forEach((option) => {
-        option.addEventListener('click', () => {
-            if (!(purposeInput instanceof HTMLTextAreaElement)) {
-                return;
+    const firstField = form.querySelector('input[name="name"]');
+    if (firstField instanceof HTMLInputElement) {
+        let focusTracked = false;
+        firstField.addEventListener('focus', () => {
+            if (!focusTracked) {
+                focusTracked = true;
+                trackGoal('form_focus');
             }
-
-            purposeOptions.forEach((item) => {
-                item.classList.remove('is-selected');
-                item.setAttribute('aria-pressed', 'false');
-            });
-
-            option.classList.add('is-selected');
-            option.setAttribute('aria-pressed', 'true');
-            purposeInput.value = option.dataset.purposeValue || '';
-            purposeInput.dispatchEvent(new Event('input', { bubbles: true }));
-
-            trackGoal('purpose_option_select', {
-                option: option.dataset.purposeId || 'unknown',
-            });
         });
-    });
-
-    purposeInput?.addEventListener('input', (event) => {
-        if (event.isTrusted) {
-            purposeOptions.forEach((option) => {
-                option.classList.remove('is-selected');
-                option.setAttribute('aria-pressed', 'false');
-            });
-        }
-    });
-
-    form.addEventListener('input', () => {
-        if (formStarted) {
-            return;
-        }
-
-        formStarted = true;
-        trackGoal('form_start', {
-            tariff: form.dataset.selectedTariff || 'Участие в курсе',
-        });
-    });
-
-    if ('IntersectionObserver' in window) {
-        let formViewed = false;
-        const observer = new IntersectionObserver((entries) => {
-            if (formViewed || !entries.some((entry) => entry.isIntersecting)) {
-                return;
-            }
-
-            formViewed = true;
-            trackGoal('form_view');
-            observer.disconnect();
-        }, { threshold: 0.35 });
-
-        observer.observe(form);
     }
 
     form.addEventListener('submit', async (event) => {
@@ -181,13 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitButton = form.querySelector('button[type="submit"]');
         const formData = new FormData(form);
 
-        trackGoal('form_submit_attempt', {
-            tariff: form.dataset.selectedTariff || 'Участие в курсе',
-        });
-
         if (submitButton instanceof HTMLButtonElement) {
             submitButton.disabled = true;
-            submitButton.textContent = 'Отправляем…';
         }
 
         if (message) {
@@ -200,27 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 body: formData,
             });
-
             const data = await response.json();
 
             if (!response.ok || !data.ok) {
                 throw new Error(data.error || 'Не удалось отправить заявку.');
             }
 
-            trackGoal('form_submit_success', {
-                tariff: form.dataset.selectedTariff || 'Участие в курсе',
-            });
+            trackGoal('lead_submit');
 
             if (message) {
-                message.textContent = 'Заявка принята. Мы свяжемся с вами, сообщим о наличии мест и ответим на вопросы.';
+                message.textContent = 'Заявка отправлена. Мы свяжемся с вами в ближайшее время.';
                 message.className = 'form-message success';
             }
 
             form.reset();
-            formStarted = false;
+            setTariff('Базовый');
         } catch (error) {
-            trackGoal('form_submit_error');
-
             if (message) {
                 message.textContent = error instanceof Error ? error.message : 'Не удалось отправить заявку.';
                 message.className = 'form-message error';
@@ -228,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Подобрать дату';
             }
         }
     });
