@@ -126,6 +126,7 @@
                     </p>
                     <p class="selected-tariff has-selection" id="selected-tariff">Выбран тариф «Базовый». Заполните форму ниже.</p>
                     <form class="form-grid form-grid-compact" id="registration-form" action="api/submit.php" method="post">
+                        <input type="hidden" name="bot_session_id" value="">
                         <input type="hidden" name="tariff" id="tariff-field" value="Базовый">
                         <input type="hidden" name="purpose" id="purpose-field" value="Тариф: Базовый. Запись на курс первой помощи">
                         <label>
