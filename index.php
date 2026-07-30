@@ -11,15 +11,15 @@
 <body>
     <header class="hero">
         <div class="container hero-content">
-            <span class="hero-badge">Офлайн-курс · Москва · 15 августа 2026</span>
-            <h1>Научитесь оказывать первую помощь за один практический день</h1>
+            <span class="hero-badge">Ближайшие группы · Москва · 15, 22 и 29 августа</span>
+            <h1>Не растеряйтесь до приезда врачей: освойте первую помощь за один день</h1>
             <p class="hero-text">
-                Отработаете СЛР, остановку кровотечений и помощь при травмах на манекенах
-                под контролем инструкторов экстренной медицины. Уйдёте с понятным алгоритмом
-                действий, сертификатом и уверенностью, что сможете помочь до приезда врачей.
+                Практический курс для родителей, водителей, педагогов, сотрудников и всех,
+                кто хочет уметь защитить близких. Отработаете СЛР, остановку кровотечений
+                и помощь при травмах на манекенах под контролем инструкторов.
             </p>
             <div class="hero-offer" aria-label="Стоимость и условия участия">
-                <strong>от 4 900 ₽</strong>
+                <strong>от 2 900 ₽</strong>
                 <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
             </div>
             <div class="hero-actions">
@@ -28,17 +28,17 @@
                     class="btn btn-primary btn-register"
                     data-cta-source="hero"
                     data-tariff-name="Участие в курсе"
-                    data-tariff-price="от 4 900 ₽"
-                >Проверить наличие мест</button>
+                    data-tariff-price="от 2 900 ₽"
+                >Подобрать удобную дату</button>
                 <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
             <p class="hero-reassurance">
-                Проверка занимает меньше минуты: без оплаты, банковской карты и обязательства покупать курс.
+                Три ближайшие субботы на выбор. Проверка мест — без оплаты, банковской карты и обязательства покупать курс.
             </p>
             <div class="meta-grid">
                 <div class="meta-card">
                     <strong>Дата</strong>
-                    15 августа 2026, суббота
+                    15, 22 или 29 августа 2026
                 </div>
                 <div class="meta-card">
                     <strong>Время</strong>
@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="hero-note">
-                Каждый участник несколько раз отработает ключевые навыки на манекенах и в парах.
-                После занятия вы получите сертификат и памятку по алгоритмам первой помощи.
+                Медицинское образование не нужно. Инструктор покажет каждый алгоритм пошагово,
+                а вы несколько раз повторите его на практике и получите памятку с собой.
             </div>
         </div>
     </header>
@@ -59,27 +59,27 @@
     <main>
         <section class="section">
             <div class="container">
-                <h2 class="section-title">О курсе</h2>
+                <h2 class="section-title">Кому особенно пригодится курс</h2>
                 <p class="section-lead">
-                    Это не лекция «для галочки», а полноценный практический день, где каждый блок
-                    заканчивается отработкой навыков под контролем инструктора.
+                    Навыки рассчитаны на обычных людей без медицинской подготовки. Разберём
+                    знакомые жизненные ситуации и доведём действия до понятного алгоритма.
                 </p>
                 <div class="features-grid">
                     <article class="feature-card">
-                        <h3>8 часов практики</h3>
-                        <p>Больше половины времени посвящено тренировкам на манекенах, имитации травм и работе в парах.</p>
+                        <h3>Родителям и близким</h3>
+                        <p>Что делать при удушье, ожоге, падении или потере сознания до приезда врачей.</p>
                     </article>
                     <article class="feature-card">
-                        <h3>Формат offline</h3>
-                        <p>Живое общение, мгновенная обратная связь и возможность задать вопросы по вашим реальным ситуациям.</p>
+                        <h3>Водителям и путешественникам</h3>
+                        <p>Как безопасно помочь при ДТП, кровотечении или травме вдали от быстрой медицинской помощи.</p>
                     </article>
                     <article class="feature-card">
-                        <h3>Сертификат</h3>
-                        <p>После курса вы получите именной сертификат и чек-лист действий для дома, работы и поездок.</p>
+                        <h3>Сотрудникам и руководителям</h3>
+                        <p>Как действовать при происшествии на работе и организовать помощь до прибытия скорой.</p>
                     </article>
                     <article class="feature-card">
-                        <h3>Малые группы</h3>
-                        <p>До 14 человек в группе, чтобы каждый успел отработать все ключевые навыки несколько раз.</p>
+                        <h3>Тем, кто начинает с нуля</h3>
+                        <p>Без сложной теории и терминов: демонстрация, тренировка и обратная связь инструктора.</p>
                     </article>
                 </div>
             </div>
@@ -311,7 +311,7 @@
                 <div class="pricing-grid">
                     <article class="pricing-card">
                         <h3>Базовый</h3>
-                        <div class="price">4 900 ₽</div>
+                        <div class="price">2 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Участие в полном однодневном курсе</li>
                             <li>Сертификат и памятка</li>
@@ -322,12 +322,12 @@
                             class="btn btn-register"
                             data-cta-source="pricing"
                             data-tariff-name="Базовый"
-                            data-tariff-price="4 900 ₽"
-                        >Проверить наличие мест</button>
+                            data-tariff-price="2 900 ₽"
+                        >Подобрать дату</button>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
-                        <div class="price">7 900 ₽</div>
+                        <div class="price">4 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Всё из базового тарифа</li>
                             <li>Набор перевязочных материалов</li>
@@ -338,12 +338,12 @@
                             class="btn btn-register"
                             data-cta-source="pricing"
                             data-tariff-name="Расширенный"
-                            data-tariff-price="7 900 ₽"
-                        >Проверить наличие мест</button>
+                            data-tariff-price="4 900 ₽"
+                        >Подобрать дату</button>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
-                        <div class="price">12 900 ₽</div>
+                        <div class="price">9 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Индивидуальный разбор рисков профессии</li>
                             <li>Консультация для HR или руководителя</li>
@@ -354,8 +354,8 @@
                             class="btn btn-register"
                             data-cta-source="pricing"
                             data-tariff-name="Корпоративный"
-                            data-tariff-price="12 900 ₽"
-                        >Уточнить условия</button>
+                            data-tariff-price="9 900 ₽"
+                        >Подобрать дату</button>
                     </article>
                 </div>
             </div>
@@ -365,22 +365,22 @@
             <div class="container">
                 <div class="registration-panel">
                     <div class="registration-copy">
-                        <span class="registration-eyebrow">Проверка без оплаты</span>
-                        <h2 class="section-title">Узнать, есть ли места</h2>
+                        <span class="registration-eyebrow">Три ближайшие даты на выбор</span>
+                        <h2 class="section-title">Подобрать удобную группу</h2>
                         <p class="section-lead">
-                            Оставьте телефон — сообщим о наличии мест, уточним формат и ответим
-                            на вопросы. Имя и решение об участии можно сообщить после разговора.
+                            Оставьте телефон — сообщим о местах на 15, 22 и 29 августа.
+                            Если эти субботы не подходят, предложим следующую дату.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
                             <span>Что проверим</span>
                             <strong id="selected-tariff-name">Участие в курсе</strong>
-                            <b id="selected-tariff-price">от 4 900 ₽</b>
+                            <b id="selected-tariff-price">от 2 900 ₽</b>
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
                         <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
                         <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
-                        <li><strong>Только по делу</strong><span>Контакт нужен для ответа по заявке</span></li>
+                        <li><strong>Удобная дата</strong><span>Три ближайшие субботы или следующая группа</span></li>
                     </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
@@ -390,7 +390,7 @@
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <button type="submit" class="btn btn-primary form-submit">Проверить наличие мест</button>
+                        <button type="submit" class="btn btn-primary form-submit">Подобрать дату</button>
                         <p class="form-privacy">
                             Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
                             Мы не передаём контакты третьим лицам.
@@ -406,8 +406,8 @@
             class="btn btn-primary btn-register mobile-booking-bar"
             data-cta-source="mobile_sticky"
             data-tariff-name="Участие в курсе"
-            data-tariff-price="от 4 900 ₽"
-        >Проверить места · от 4 900 ₽</button>
+            data-tariff-price="от 2 900 ₽"
+        >Подобрать дату · от 2 900 ₽</button>
     </main>
 
     <footer class="site-footer">

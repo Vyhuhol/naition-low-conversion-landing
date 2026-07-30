@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             if (submitButton instanceof HTMLButtonElement) {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Проверить наличие мест';
+                submitButton.textContent = 'Подобрать дату';
             }
         }
     });
