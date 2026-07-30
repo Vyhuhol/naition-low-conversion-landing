@@ -19,7 +19,7 @@
                 действий, сертификатом и уверенностью, что сможете помочь до приезда врачей.
             </p>
             <div class="hero-offer" aria-label="Стоимость и условия участия">
-                <strong>от 2 900 ₽</strong>
+                <strong>от 4 900 ₽</strong>
                 <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
             </div>
             <div class="hero-actions">
@@ -28,7 +28,7 @@
                     class="btn btn-primary btn-register"
                     data-cta-source="hero"
                     data-tariff-name="Участие в курсе"
-                    data-tariff-price="от 2 900 ₽"
+                    data-tariff-price="от 4 900 ₽"
                 >Проверить наличие мест</button>
                 <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
@@ -311,7 +311,7 @@
                 <div class="pricing-grid">
                     <article class="pricing-card">
                         <h3>Базовый</h3>
-                        <div class="price">2 900 ₽</div>
+                        <div class="price">4 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Участие в полном однодневном курсе</li>
                             <li>Сертификат и памятка</li>
@@ -322,12 +322,12 @@
                             class="btn btn-register"
                             data-cta-source="pricing"
                             data-tariff-name="Базовый"
-                            data-tariff-price="2 900 ₽"
+                            data-tariff-price="4 900 ₽"
                         >Проверить наличие мест</button>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
-                        <div class="price">4 900 ₽</div>
+                        <div class="price">7 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Всё из базового тарифа</li>
                             <li>Набор перевязочных материалов</li>
@@ -338,12 +338,12 @@
                             class="btn btn-register"
                             data-cta-source="pricing"
                             data-tariff-name="Расширенный"
-                            data-tariff-price="4 900 ₽"
+                            data-tariff-price="7 900 ₽"
                         >Проверить наличие мест</button>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
-                        <div class="price">9 900 ₽</div>
+                        <div class="price">12 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Индивидуальный разбор рисков профессии</li>
                             <li>Консультация для HR или руководителя</li>
@@ -354,7 +354,7 @@
                             class="btn btn-register"
                             data-cta-source="pricing"
                             data-tariff-name="Корпоративный"
-                            data-tariff-price="9 900 ₽"
+                            data-tariff-price="12 900 ₽"
                         >Уточнить условия</button>
                     </article>
                 </div>
@@ -374,7 +374,7 @@
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
                             <span>Что проверим</span>
                             <strong id="selected-tariff-name">Участие в курсе</strong>
-                            <b id="selected-tariff-price">от 2 900 ₽</b>
+                            <b id="selected-tariff-price">от 4 900 ₽</b>
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
@@ -406,8 +406,8 @@
             class="btn btn-primary btn-register mobile-booking-bar"
             data-cta-source="mobile_sticky"
             data-tariff-name="Участие в курсе"
-            data-tariff-price="от 2 900 ₽"
-        >Проверить места · от 2 900 ₽</button>
+            data-tariff-price="от 4 900 ₽"
+        >Проверить места · от 4 900 ₽</button>
     </main>
 
     <footer class="site-footer">
