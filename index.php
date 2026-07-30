@@ -11,29 +11,29 @@
 <body>
     <header class="hero">
         <div class="container hero-content">
-            <span class="hero-badge">Бесплатный практикум · 90 минут · Москва</span>
-            <h1>Попробуйте первую помощь на бесплатном практическом занятии</h1>
+            <span class="hero-badge">Ближайшие группы · Москва · 15, 22 и 29 августа</span>
+            <h1>Не растеряйтесь до приезда врачей: освойте первую помощь за один день</h1>
             <p class="hero-text">
-                За 90 минут проверите дыхание, попробуете СЛР на манекене и разберёте,
-                как не растеряться до приезда врачей. После занятия сами решите,
-                нужен ли вам полный курс — без оплаты и обязательств.
+                Практический курс для родителей, водителей, педагогов, сотрудников и всех,
+                кто хочет уметь защитить близких. Отработаете СЛР, остановку кровотечений
+                и помощь при травмах на манекенах под контролем инструкторов.
             </p>
             <div class="hero-offer" aria-label="Стоимость и условия участия">
-                <strong>0 ₽</strong>
-                <span>90 минут · до 10 человек · практика с инструктором</span>
+                <strong>от 2 900 ₽</strong>
+                <span>8 часов · группа до 14 человек · больше половины времени — практика</span>
             </div>
             <div class="hero-actions">
                 <button
                     type="button"
                     class="btn btn-primary btn-register"
                     data-cta-source="hero"
-                    data-tariff-name="Бесплатный вводный практикум"
-                    data-tariff-price="0 ₽"
-                >Записаться бесплатно</button>
-                <a class="btn btn-secondary" href="#program">Посмотреть полный курс</a>
+                    data-tariff-name="Участие в курсе"
+                    data-tariff-price="от 2 900 ₽"
+                >Подобрать удобную дату</button>
+                <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
             </div>
             <p class="hero-reassurance">
-                Не нужна банковская карта. На занятии ничего не продаём — сначала вы пробуете навыки на практике.
+                Три ближайшие субботы на выбор. Проверка мест — без оплаты, банковской карты и обязательства покупать курс.
             </p>
             <div class="meta-grid">
                 <div class="meta-card">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="meta-card">
                     <strong>Время</strong>
-                    10:00 – 11:30 или 19:00 – 20:30
+                    10:00 – 18:00, перерыв на обед
                 </div>
                 <div class="meta-card">
                     <strong>Место</strong>
@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="hero-note">
-                Медицинское образование не нужно. Инструктор покажет первые действия пошагово,
-                а вы повторите их на манекене и получите памятку с собой.
+                Медицинское образование не нужно. Инструктор покажет каждый алгоритм пошагово,
+                а вы несколько раз повторите его на практике и получите памятку с собой.
             </div>
         </div>
     </header>
@@ -87,11 +87,12 @@
 
         <section class="section" id="program">
             <div class="container">
-                <h2 class="section-title">Что вы освоите на полном курсе</h2>
+                <h2 class="section-title">Программа курса</h2>
                 <p class="section-lead program-intro">
-                    На бесплатном практикуме вы попробуете первые действия и СЛР. Если формат
-                    подойдёт, полный день добавит работу с кровотечениями, травмами и сложными
-                    сценариями. Решение можно принять после знакомства.
+                    Программа выстроена от базовой оценки ситуации до сложных сценариев с несколькими
+                    пострадавшими. Мы подробно разбираем алгоритмы, типичные ошибки и то, как
+                    действовать, когда рядом нет медикаментов и оборудования. Каждый модуль включает
+                    теорию, демонстрацию инструктора и практику участников.
                 </p>
                 <div class="program-list">
                     <article class="program-module">
@@ -305,8 +306,7 @@
             <div class="container">
                 <h2 class="section-title">Тарифы</h2>
                 <p class="section-lead">
-                    Сначала приходите на бесплатный практикум. Если захотите продолжить,
-                    выберите формат полного курса — материалы и сертификат уже включены.
+                    Выберите формат участия. Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card">
@@ -365,32 +365,32 @@
             <div class="container">
                 <div class="registration-panel">
                     <div class="registration-copy">
-                        <span class="registration-eyebrow">Бесплатно · 90 минут практики</span>
-                        <h2 class="section-title">Записаться на вводное занятие</h2>
+                        <span class="registration-eyebrow">Три ближайшие даты на выбор</span>
+                        <h2 class="section-title">Подобрать удобную группу</h2>
                         <p class="section-lead">
-                            Оставьте телефон — сообщим о свободном времени 15, 22 и 29 августа.
-                            Выберите удобную группу, попробуйте занятие и только потом решайте насчёт курса.
+                            Оставьте телефон — сообщим о местах на 15, 22 и 29 августа.
+                            Если эти субботы не подходят, предложим следующую дату.
                         </p>
                         <div class="selected-tariff" id="selected-tariff" aria-live="polite">
-                            <span>Ваша запись</span>
-                            <strong id="selected-tariff-name">Бесплатный вводный практикум</strong>
-                            <b id="selected-tariff-price">0 ₽</b>
+                            <span>Что проверим</span>
+                            <strong id="selected-tariff-name">Участие в курсе</strong>
+                            <b id="selected-tariff-price">от 2 900 ₽</b>
                         </div>
                     </div>
                     <ul class="commitment-points" aria-label="Условия заявки">
-                        <li><strong>0 ₽</strong><span>Банковская карта не нужна</span></li>
-                        <li><strong>Без обязательств</strong><span>Полный курс покупать не нужно</span></li>
-                        <li><strong>Сразу практика</strong><span>СЛР на манекене под контролем инструктора</span></li>
+                        <li><strong>Без оплаты</strong><span>Банковская карта не нужна</span></li>
+                        <li><strong>Без обязательств</strong><span>Заявка не обязывает покупать курс</span></li>
+                        <li><strong>Удобная дата</strong><span>Три ближайшие субботы или следующая группа</span></li>
                     </ul>
                     <form class="form-grid single-field-form" id="registration-form" action="api/submit.php" method="post">
                         <input type="hidden" name="bot_session_id" value="">
-                        <input type="hidden" name="tariff" value="Бесплатный вводный практикум">
+                        <input type="hidden" name="tariff" value="Участие в курсе">
                         <input type="hidden" name="name" value="Не указано">
                         <label class="form-field">
                             <span>Телефон</span>
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="+7 999 000-00-00">
                         </label>
-                        <button type="submit" class="btn btn-primary form-submit">Записаться бесплатно</button>
+                        <button type="submit" class="btn btn-primary form-submit">Подобрать дату</button>
                         <p class="form-privacy">
                             Нажимая кнопку, вы соглашаетесь на обработку данных для связи по заявке.
                             Мы не передаём контакты третьим лицам.
@@ -405,9 +405,9 @@
             type="button"
             class="btn btn-primary btn-register mobile-booking-bar"
             data-cta-source="mobile_sticky"
-            data-tariff-name="Бесплатный вводный практикум"
-            data-tariff-price="0 ₽"
-        >Бесплатный практикум · 0 ₽</button>
+            data-tariff-name="Участие в курсе"
+            data-tariff-price="от 2 900 ₽"
+        >Подобрать дату · от 2 900 ₽</button>
     </main>
 
     <footer class="site-footer">
