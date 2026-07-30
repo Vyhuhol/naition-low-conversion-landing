@@ -100,15 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isMobile = window.matchMedia('(max-width: 720px)').matches;
         const heroPassed = hero.getBoundingClientRect().bottom < 0;
-        const registrationRect = registrationSection.getBoundingClientRect();
-        const registrationVisible = (
-            registrationRect.top < window.innerHeight * 0.7
-            && registrationRect.bottom > window.innerHeight * 0.2
-        );
+        const registrationReached = registrationSection.getBoundingClientRect().top < window.innerHeight * 0.7;
 
         mobileBookingBar.classList.toggle(
             'is-visible',
-            isMobile && heroPassed && !registrationVisible
+            isMobile && heroPassed && !registrationReached
         );
     };
 
