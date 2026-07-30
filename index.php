@@ -141,7 +141,7 @@
                             E-mail
                             <input type="email" name="email" required autocomplete="email">
                         </label>
-                        <button type="submit" class="btn btn-primary form-submit">Отправить заявку</button>
+                        <button type="submit" class="btn btn-primary form-submit">Забронировать место на курсе</button>
                     </form>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
